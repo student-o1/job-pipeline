@@ -20,4 +20,5 @@ Redis = order board where all orders get placed
 
 worker = kitchen chef who processes the orders
 
-## 
+## Technicl Play
+...
