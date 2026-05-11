@@ -15,7 +15,9 @@ python producer.py
 
 ## Mental Model
 enqueue_job.py = customer placing order
+
 Redis = order board where all orders get placed
+
 worker = kitchen chef who processes the orders
 
 ## 
