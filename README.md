@@ -1,4 +1,9 @@
 # Job Pipeline
+
+- [X] Base functionality
+- [ ] FastAPI
+- [ ] Vue.js Frontend
+
 ## CMDs
 **Local:**
 ```sh
@@ -20,5 +25,9 @@ Redis = order board where all orders get placed
 
 worker = kitchen chef who processes the orders
 
-## Technicl Play
-...
+## Technical Model
+A new job is started by the producer, and Dramatiq places a message into Redis. Redis acts as a message broker (queue) between the producer and the workers.
+
+Worker processes run in the background and continuously listen for new messages in Redis. As soon as a job appears in the queue, one available worker pick it up and processes it.
+
+True Parallelism?
