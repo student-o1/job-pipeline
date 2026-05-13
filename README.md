@@ -4,6 +4,8 @@
 - [X] FastAPI
 - [X] Seperated Queues
 - [X] Seperated Worker Container per Queue
+- [X] Save job status in Redis
+- [X] Get status from FastAPI endpoint
 - [ ] Vue.js Frontend
 
 ## CMDs
