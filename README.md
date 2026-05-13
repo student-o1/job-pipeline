@@ -18,8 +18,10 @@ python producer.py
 
 **Docker:**
 ```sh
- docker compose up --build
- python src/enqueue_job.py
+docker compose up --build
+python src/enqueue_job.py
+curl -X POST http://localhost:8000/jobs
+curl http://localhost:8000/jobs/{job_id}
 ```
 
 ## Mental Model
