@@ -4,9 +4,25 @@ services:
     ports:
       - "6379:6379"
 
-  worker:
+  image-worker:
     build: .
-    command: dramatiq src.tasks
+    command: dramatiq src.tasks --queues image
+    depends_on:
+      - redis
+    environment:
+      REDIS_HOST: redis
+
+  ocr-worker:
+    build: .
+    command: dramatiq src.tasks --queues ocr
+    depends_on:
+      - redis
+    environment:
+      REDIS_HOST: redis
+
+  llm-worker:
+    build: .
+    command: dramatiq src.tasks --queues llm
     depends_on:
       - redis
     environment:

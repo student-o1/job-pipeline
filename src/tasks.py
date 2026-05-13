@@ -9,22 +9,22 @@ broker = RedisBroker(host=REDIS_HOST, port=6379)
 dramatiq.set_broker(broker)
 
 
-@dramatiq.actor
+@dramatiq.actor(queue_name="image")
 def image_recognition(job_id):
     print(f"[START] image_recognition {job_id}")
     time.sleep(1)
     ocr.send(job_id)
 
 
-@dramatiq.actor
+@dramatiq.actor(queue_name="ocr")
 def ocr(job_id):
     print(f"[START] OCR {job_id}")
     time.sleep(1)
     llm_reasoning.send(job_id)
 
 
-@dramatiq.actor
+@dramatiq.actor(queue_name="llm")
 def llm_reasoning(job_id):
-    print(f"[DONE] LLM reasoning {job_id}")
+    print(f"[START] LLM reasoning {job_id}")
     time.sleep(1)
     print(f"[COMPLETE] {job_id}")

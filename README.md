@@ -1,7 +1,9 @@
 # Job Pipeline
 
 - [X] Base functionality
-- [ ] FastAPI
+- [X] FastAPI
+- [X] Seperated Queues
+- [X] Seperated Worker Container per Queue
 - [ ] Vue.js Frontend
 
 ## CMDs
