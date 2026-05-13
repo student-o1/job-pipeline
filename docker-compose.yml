@@ -11,3 +11,13 @@ services:
       - redis
     environment:
       REDIS_HOST: redis
+
+  api:
+    build: .
+    command: uvicorn src.api:app --host 0.0.0.0 --port 8000
+    depends_on:
+      - redis
+    environment:
+      REDIS_HOST: redis
+    ports:
+      - "8000:8000"

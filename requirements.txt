@@ -1,2 +1,4 @@
 dramatiq[redis]
 redis
+uvicorn
+fastapi
